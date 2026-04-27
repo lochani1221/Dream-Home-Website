@@ -180,6 +180,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 👨‍💻 Author
 
-Built with ❤️ by **Miyuranga Ketipearachchi**
+Built with by **Miyuranga Ketipearachchi**
 
 > "Bringing you closer to your dream home, one click at a time."
