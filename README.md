@@ -1,61 +1,185 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏠 Dwello — Find Your Dream Home
+URL - https://dream-home-website-production.up.railway.app/
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> A modern house selling website built with Laravel, Blade, and Tailwind CSS.
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📋 About
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**Dwello** is a full-stack house selling web application that helps users discover, explore, and purchase their dream homes. The platform features a beautiful landing page, user authentication, role-based dashboards for both admins and users, and a curated property listing experience.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## ✨ Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- 🏡 Beautiful landing page with animated sections
+- 🔐 User authentication (Register / Login / Logout)
+- 👤 Role-based access — Admin & User dashboards
+- 🏘️ Property listings with location, price, and room details
+- 🔍 Property search by location, type, and price range
+- ⭐ Testimonials section
+- 📱 Fully responsive design
+- 🚀 Deployed on Railway with MySQL database
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠️ Tech Stack
 
-## Laravel Sponsors
+| Layer | Technology |
+|---|---|
+| Backend | Laravel (PHP) |
+| Frontend | Blade Templates |
+| Styling | Tailwind CSS (CDN) |
+| Database | MySQL |
+| Auth | Laravel Breeze / Auth |
+| Deployment | Railway |
+| Version Control | GitHub |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🚀 Getting Started (Local Setup)
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Prerequisites
+- PHP >= 8.2
+- Composer
+- MySQL
+- Git
 
-## Contributing
+### Installation
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+**1. Clone the repository**
+```bash
+git clone https://github.com/YOUR_USERNAME/dwello.git
+cd dwello
+```
 
-## Code of Conduct
+**2. Install PHP dependencies**
+```bash
+composer install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**3. Copy environment file**
+```bash
+cp .env.example .env
+```
 
-## Security Vulnerabilities
+**4. Generate application key**
+```bash
+php artisan key:generate
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+**5. Configure your database in `.env`**
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=dwello
+DB_USERNAME=root
+DB_PASSWORD=your_password
+```
 
-## License
+**6. Run migrations**
+```bash
+php artisan migrate
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**7. Start the development server**
+```bash
+php artisan serve
+```
+
+Visit `http://localhost:8000` in your browser. 🎉
+
+---
+
+## 🌐 Deployment (Railway)
+
+This project is deployed on [Railway](https://railway.app) with a managed MySQL database.
+
+### Environment Variables Required
+
+```env
+APP_NAME=Dwello
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=https://your-railway-url.up.railway.app
+APP_KEY=your_app_key
+
+DB_CONNECTION=mysql
+DB_HOST=${{MySQL.MYSQLHOST}}
+DB_PORT=${{MySQL.MYSQLPORT}}
+DB_DATABASE=${{MySQL.MYSQLDATABASE}}
+DB_USERNAME=${{MySQL.MYSQLUSER}}
+DB_PASSWORD=${{MySQL.MYSQLPASSWORD}}
+```
+
+### Deploy Steps
+1. Push code to GitHub
+2. Connect GitHub repo to Railway
+3. Add MySQL plugin in Railway
+4. Set environment variables
+5. Railway auto-deploys on every push ✅
+
+---
+
+## 📁 Project Structure
+
+```
+dwello/
+├── app/
+│   ├── Http/Controllers/
+│   └── Models/
+├── resources/
+│   └── views/
+│       ├── layouts/
+│       │   └── app.blade.php
+│       ├── landing.blade.php
+│       ├── admin/
+│       │   └── dashboard.blade.php
+│       └── user/
+│           └── dashboard.blade.php
+├── routes/
+│   └── web.php
+├── database/
+│   └── migrations/
+├── public/
+│   └── images/
+├── nixpacks.toml
+└── README.md
+```
+
+---
+
+## 👤 User Roles
+
+| Role | Access |
+|---|---|
+| **Guest** | Landing page, Register, Login |
+| **User** | User dashboard, property browsing |
+| **Admin** | Admin dashboard, full management |
+
+---
+
+## 🗄️ Database
+
+The project uses MySQL with the following main tables:
+
+- `users` — stores user accounts with role column (admin/user)
+- `cache` — Laravel cache table
+- `jobs` — Laravel queue jobs
+- `personal_access_tokens` — API token management
+- `sessions` — user session storage
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+## 👨‍💻 Author
+
+Built with ❤️ by **Miyuranga Ketipearachchi**
+
+> "Bringing you closer to your dream home, one click at a time."
